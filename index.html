@@ -1,30 +1,28 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html>
 	<head>
 		<meta charset=utf-8 />
 		<meta name="viewport" content="width=device-width,initial-scale=1">
 		<title>PictureTime</title>
-		
-		<script src="external/matchmedia.js"></script>
-		<script src="pictureTime.js"></script>
+
+		<script src="polyPict.js"></script>
 		<style>
 			body { font-family: sans-serif }
-			img {  max-width: 100% }
+			img { width: 100%;}
 		</style>
 	</head>
 	<body>
-		
-		<h1>PictureTime: A &lt;picture&gt; element polyfill, building on <a href="http://github.com/scottjehl/picturefill">picturefill</a></h1>
-		
-		<picture alt="Photo: Tiger in tall grass" />
-	        <source srcset="external/imgs/small.jpg 1x, external/imgs/smallplus.jpg 2x">
-	        <source media="(min-width: 700px)" srcset="external/imgs/medium.jpg 1x, external/imgs/mediumplus.jpg 2x" />
-	        <source media="(min-width: 900px)" srcset="external/imgs/large.jpg 1x, external/imgs/largeplus.jpg 2x" />
-	         
-	        <!-- noscript prevents the image from using resources unless JS fails -->
-	        <noscript>
-	            <img src="external/imgs/medium.jpg" />
-	        </noscript>
-    </picture>
+
+		<h1>polyPict: A &lt;picture&gt; polyfill.</h1>
+
+		<picture>
+	        <source sizes="100%" srcset="http://fillmurray.com/400/247/ 400w, http://fillmurray.com/800/494/ 800w, http://fillmurray.com/1200/742/ 1200w" />
+	        <source sizes="(min-width: 800px) 75%" srcset="http://fillmurray.com/600/371/ 600w, http://fillmurray.com/1200/742/ 1200w, http://fillmurray.com/1800/1112/ 1200w" />
+
+            <img alt="Best practice is to leave controlling img's src attribute blank untill better &lt;picture&gt; support" src="" />
+	    </picture>
+
+        <img sizes="(min-width: 400px) 50%, (min-width: 200px) 75%, 100%" srcset="http://fillmurray.com/200/124/ 200w, http://fillmurray.com/600/371/ 600w, http://fillmurray.com/1200/742/ 1200w, http://fillmurray.com/1800/1112/ 1200w" />
+
 	</body>
 </html>
