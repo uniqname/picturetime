@@ -115,6 +115,9 @@
                                     if (srcset[src].width) {
 
                                         currentW = srcset[src].width;
+                                        w = w == null ? currentW : w;
+                                        finalSrc = finalSrc || src;
+
                                         //find `w` descriptor that has smallest value > `size`
                                         if (currentW >= size && (currentW < w || !w)) {
                                             w = currentW;

@@ -9,6 +9,16 @@
 		<style>
 			body { font-family: sans-serif }
 			img { width: 100%;}
+
+			picture {
+				display: block;
+				width: 100%;
+			}
+			@media (max-width: 600px) {
+				picture {
+					width: 75%;
+				}
+			}
 		</style>
 	</head>
 	<body>
@@ -17,7 +27,7 @@
 
 		<picture>
 	        <source sizes="100%" srcset="http://fillmurray.com/400/247/ 400w, http://fillmurray.com/800/494/ 800w, http://fillmurray.com/1200/742/ 1200w" />
-	        <source sizes="(min-width: 800px) 75%" srcset="http://fillmurray.com/600/371/ 600w, http://fillmurray.com/1200/742/ 1200w, http://fillmurray.com/1800/1112/ 1200w" />
+	        <source sizes="(max-width: 600px) 75%" srcset="http://fillmurray.com/600/371/ 600w, http://fillmurray.com/1200/742/ 1200w, http://fillmurray.com/1800/1112/ 1200w" />
 
             <img alt="Best practice is to leave controlling img's src attribute blank untill better &lt;picture&gt; support" src="" />
 	    </picture>
